@@ -1,0 +1,64 @@
+{
+  "name": "volley-sample-pilet",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "pilet"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "^16.8.2",
+    "@types/react-dom": "^16.8.0",
+    "@types/react-router": "^5.0.0",
+    "@types/react-router-dom": "latest",
+    "piral-cli": "^0.8.3",
+    "reactstrap": "^8.0.1",
+    "sample-piral": "0.8.4",
+    "sass": "^1.23.7",
+    "typescript": "latest"
+  },
+  "peerDependencies": {
+    "reactstrap": "*",
+    "@dbeining/react-atom": "*",
+    "@libre/atom": "*",
+    "history": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-router": "*",
+    "react-router-dom": "*",
+    "tslib": "*",
+    "path-to-regexp": "*",
+    "sample-piral": "*"
+  },
+  "scripts": {
+    "debug-pilet": "pilet debug",
+    "build-pilet": "pilet build",
+    "upgrade-pilet": "pilet upgrade --force-overwrite yes",
+    "start": "pilet debug"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "piral": {
+    "comment": "Keep this section to allow running `piral upgrade`.",
+    "name": "sample-piral",
+    "version": "0.8.4",
+    "tooling": "0.8.3",
+    "externals": [
+      "reactstrap"
+    ],
+    "files": [],
+    "scripts": {
+      "start": "pilet debug",
+      "upgrade-pilet": "pilet upgrade --force-overwrite yes"
+    },
+    "validators": {},
+    "devDependencies": {},
+    "preScaffold": "",
+    "postScaffold": "",
+    "preUpgrade": "",
+    "postUpgrade": ""
+  }
+}
