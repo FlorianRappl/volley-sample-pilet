@@ -1,6 +1,6 @@
 import './Styles/volley.scss';
 import * as React from 'react';
-import { Application } from './Scripts/application';
+import { Application } from './Scripts/Application';
 
 let app: Application;
 
