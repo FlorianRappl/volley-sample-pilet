@@ -15,4 +15,5 @@ jobs:
       uses: smapiot/publish-pilet-action@v4
       with:
         feed: sample
+        bundler: esbuild
         api-key: ${{ secrets.apiKey }}
