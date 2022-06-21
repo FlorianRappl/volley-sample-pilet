@@ -5,14 +5,11 @@ import { Keyboard } from './Keyboard';
 import { Player } from './Player';
 import { ImageResources } from './ImageResources';
 import { AudioResources } from './AudioResources';
-import { toList } from './utils';
+import images from '../Content/images/all.codegen';
+import beaches from '../Content/beaches/all.codegen';
+import avatars from '../Content/avatars/all.codegen';
+import flags from '../Content/flags/all.codegen';
 import { AppType, ResourcesType } from './types';
-
-const images = toList(require('../Content/images/*.*'));
-const sounds = toList(require('../Content/sounds/*.*'));
-const beaches = toList(require('../Content/beaches/*.*'));
-const avatars = toList(require('../Content/avatars/*.*'));
-const flags = toList(require('../Content/flags/*.*'));
 
 export class Application extends VirtualObject implements AppType {
   private canvas: HTMLCanvasElement;
@@ -28,7 +25,7 @@ export class Application extends VirtualObject implements AppType {
       beaches: new ImageResources(beaches),
       flags: new ImageResources(flags),
       images: new ImageResources(images),
-      sounds: new AudioResources(sounds),
+      sounds: new AudioResources([]),
     };
     this.mount(root);
     this.game = new Game(this);

@@ -1,0 +1,26 @@
+const { readdirSync } = require('fs');
+
+module.exports = function () {
+  const imports = [];
+  const list = [];
+
+  readdirSync(__dirname).forEach((file, i) => {
+    if (file !== __filename) {
+      const id = `res_${i}`;
+      const name = file.substring(0, file.indexOf('.'));
+
+      imports.push(`import ${id} from "./${file}";`);
+
+      list.push(`{
+        "name": ${JSON.stringify(name)},
+        "path": ${id},
+      }`);
+    }
+  });
+
+  return `
+    ${imports.join('\n')}
+
+    export default [${list.join(', ')}];
+  `;
+};
